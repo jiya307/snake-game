@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Nokia Snake</title>
+  <link rel="stylesheet" href="snake.css" />
+</head>
+<body>
+  <div class="phone" id="phone">
+    <!-- Top bar: score + controls -->
+    <header class="topbar">
+      <div class="score-block">
+        <span class="label">SCORE</span>
+        <span id="score">0</span>
+      </div>
+      <div class="score-block">
+        <span class="label">HIGH</span>
+        <span id="highScore">0</span>
+      </div>
+      <div class="top-buttons">
+        <button id="pauseBtn" class="pixel-btn" aria-label="Pause">II</button>
+    </header>
+
+    <!-- Game screen -->
+    <div class="screen-wrap">
+      <canvas id="game" width="300" height="300"></canvas>
+
+      <!-- Startup splash -->
+      <div id="startScreen" class="overlay">
+        <h1 class="title">SNAKE</h1>
+        <p class="blink">PRESS START</p>
+        <button id="startBtn" class="pixel-btn big">START</button>
+      </div>
+
+      <!-- Game Over -->
+      <div id="gameOverScreen" class="overlay hidden">
+        <h2 class="title small">GAME OVER</h2>
+        <p>Score: <span id="finalScore">0</span></p>
+        <button id="restartBtn" class="pixel-btn big">RESTART</button>
+      </div>
+
+      <!-- Paused -->
+      <div id="pauseScreen" class="overlay hidden">
+        <h2 class="title small">PAUSED</h2>
+      </div>
+    </div>
+
+    <!-- On-screen D-pad for mobile -->
+    <div class="dpad" aria-label="Direction controls">
+      <button class="dpad-btn up" data-dir="up" aria-label="Up">▲</button>
+      <div class="dpad-mid">
+        <button class="dpad-btn left" data-dir="left" aria-label="Left">◀</button>
+        <button class="dpad-btn center" aria-label="center" disabled></button>
+        <button class="dpad-btn right" data-dir="right" aria-label="Right">▶</button>
+      </div>
+      <button class="dpad-btn down" data-dir="down" aria-label="Down">▼</button>
+    </div>
+  </div>
+
+  <script src="snake.js"></script>
+</body>
+</html>
